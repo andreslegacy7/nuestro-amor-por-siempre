@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestro Aniversario ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      color: rgba(255,255,255,0.8);
+      animation: float 6s infinite ease-in;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+    section {
+      background: #fff;
+      color: #333;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2.2rem;
+      color: #e2557a;
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .letter {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    footer {
+      background: #e2557a;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 1.2rem;
+    }
+    audio {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>Feliz Aniversario, Mi Amor 💕</h1>
+      <p>
+        Desde que llegaste a mi vida, todo tiene más color, más sentido y más amor.
+        Esta página es solo una pequeña muestra de lo mucho que significas para mí.
+      </p>
+      <audio controls autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+  </header>
+
+  <section>
+    <h2>Nuestros Momentos 📸</h2>
+    <div class="gallery">
+      <!-- Reemplaza las rutas por tus fotos -->
+      <img src="foto1.jpg" alt="Nosotros" />
+      <img src="foto2.jpg" alt="Nosotros" />
+      <img src="foto3.jpg" alt="Nosotros" />
+      <img src="foto4.jpg" alt="Nosotros" />
+      <img src="foto5.jpg" alt="Nosotros" />
+      <img src="foto6.jpg" alt="Nosotros" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Para Ti ❤️</h2>
+    <div class="letter">
+      <p>
+        Amor, gracias por cada risa, cada abrazo, cada mirada y cada momento compartido.
+        A tu lado he aprendido lo que es amar de verdad.
+      </p>
+      <p>
+        Prometo cuidarte, respetarte y seguir construyendo recuerdos contigo.
+        Eres mi lugar seguro, mi alegría diaria y mi más bonita casualidad.
+      </p>
+      <p>
+        Hoy celebramos nuestro amor, y espero que este sea solo uno de muchos aniversarios más.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Hecho con todo mi amor 💘<br />
+    Para la mujer más especial de mi vida
+  </footer>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+      heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
